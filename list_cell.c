@@ -105,6 +105,7 @@ forme_fleche_adj * create_ff_adj()
 {
     forme_fleche_adj * ff_adj = malloc(sizeof(forme_fleche_adj));
     ff_adj->forme_flechie = malloc(MAX_SIZE_WORD*sizeof(char ));
+    ff_adj->base = malloc(MAX_SIZE_WORD*sizeof(char ));
     ff_adj->genre = 0;
     ff_adj->nombre = 0;
 
@@ -161,6 +162,7 @@ forme_fleche_verbe * create_ff_verbe()
 {
     forme_fleche_verbe * ff_verbe = malloc(sizeof(forme_fleche_verbe));
     ff_verbe->forme_flechie = malloc(MAX_SIZE_WORD*sizeof(char ));
+    ff_verbe->base = malloc(MAX_SIZE_WORD*sizeof(char ));
     ff_verbe->genre = 0;
     ff_verbe->nombre = 0;
 

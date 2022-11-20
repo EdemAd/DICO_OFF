@@ -41,5 +41,5 @@ p_node_verbe createNode_verbe(p_word_stock ws, int cpt);
 void add_adv(p_word_stock ws,tree_adv *tree);
 p_node_adv createNode_adv(p_word_stock ws, int cpt);
 
-
+void cree_phrase(tree_nom treenom,tree_adv treeadv,tree_verbe treeverbe,tree_adj treeadj);
 #endif //DICO_OFF_WORD_H

@@ -132,6 +132,7 @@ typedef struct forme_fleche_adj
     int nombre;
     int genre;
     char * forme_flechie;
+    char * base;
 
 
 }forme_fleche_adj,* p_forme_fleche_adj;
@@ -197,6 +198,7 @@ typedef struct forme_fleche_verbe
     int nombre;
     int genre;
     char * forme_flechie;
+    char * base;
 
 
 }forme_fleche_verbe,* p_forme_fleche_verbe;
