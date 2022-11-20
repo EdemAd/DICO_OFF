@@ -39,6 +39,7 @@ forme_fleche_nom * create_ff_nom()
 {
     forme_fleche_nom * ff_nom = malloc(sizeof(forme_fleche_nom));
     ff_nom->forme_flechie = malloc(MAX_SIZE_WORD*sizeof(char ));
+    ff_nom->base = malloc(MAX_SIZE_WORD* sizeof(char));
     ff_nom->genre = 0;
     ff_nom->nombre = 0;
     ff_nom->nb_ff = 0;

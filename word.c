@@ -195,6 +195,7 @@ void add_forme_flechie_nom(node_nom * node, p_word_stock ws)
     forme_fleche_nom * ff_nom = create_ff_nom();
     printf("ff_1.5\n");
     strcpy(ff_nom->forme_flechie,ws->mot);
+    strcpy(ff_nom->base,ws->base);
     printf("ff_2\n");
     printf("%s\n",ws->mot);
     ff_nom->nb_ff++;
@@ -273,6 +274,117 @@ p_node_nom createNode_nom(p_word_stock ws, int cpt)
     printf("node nom create\n");
 
     return node;
+
+}
+
+node_nom * extract_node_nom(node_nom nodeNom)
+{
+
+    srand(time(NULL));
+
+    int first = rand()%35;
+
+    printf("ext 2.1\n");
+    cell_nom * temp = nodeNom.liste_fils->head;
+    printf("%d\n",first);
+
+    for(int k = 0; k<first; k++)
+    {
+        printf("ext 2.2\n");
+        if(temp == NULL)
+        {
+            printf("ext 2.25\n");
+            temp = nodeNom.liste_fils->head;
+        }
+        else
+        {
+            temp = temp->next;
+        }
+    }
+    if(temp == NULL)
+    {
+        temp = nodeNom.liste_fils->head;
+    }
+    printf("ext 2.3\n");
+    if(temp->node == NULL)
+    {
+        printf("NULL NULL");
+    }
+    printf("%c\n",temp->node->val);
+    return temp->node;
+}
+
+
+/***char * extract_word_nom(node_nom root)
+{
+    p_node_nom temp_node;
+    printf("ext 1\n");
+    char * word = malloc(MAX_SIZE_WORD* sizeof(char));
+    printf("ext 2\n");
+    temp_node = extract_char_nom(root);
+    printf("ext 3\n");
+
+    strcpy(word,&temp_node->val);
+    printf("%s\n",word);
+    printf("ext 4\n");
+
+    int fin = 0;
+    do
+    {
+        printf("ext 5\n");
+        temp_node = extract_char_nom(*temp_node);
+        printf("ext 5.5\n");
+        strcat(word,&temp_node->val);
+        printf("ext 6\n");
+        if(temp_node->liste_ffleche != NULL)
+        {
+            int pile_face = rand()%2;
+            if(pile_face == 1)
+            {
+                fin = 1;
+            }
+        }
+
+    }while ((temp_node->liste_fils == NULL)||(fin == 0));
+
+    printf("ext 5\n");
+    printf("%s",word);
+
+    return word;
+}***/
+
+
+p_forme_fleche_nom extract_ff_nom(tree_nom tree)
+{
+
+    p_node_nom temp_node;
+    temp_node = extract_node_nom(tree.root);
+    printf("ext 3\n");
+    p_forme_fleche_nom ff_nom;
+    int fin = 0;
+    printf("ext 4\n");
+    do
+    {
+        if(temp_node->liste_ffleche != NULL)
+        {
+            printf("ext 5\n");
+
+            int pile_face = rand()%2;
+            if(pile_face == 1)
+            {
+                fin = 1;
+                ff_nom = temp_node->liste_ffleche->head->forme_flechie;
+            }
+        }
+        else
+        {
+            temp_node = extract_node_nom(*temp_node);
+        }
+
+    }while ((temp_node->liste_fils == NULL)||(fin == 0));
+
+
+    return ff_nom;
 
 }
 

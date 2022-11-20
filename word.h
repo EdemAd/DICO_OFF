@@ -26,6 +26,9 @@ void add_nom(p_word_stock ws,tree_nom *tree);
 p_word_stock createws();
 void add_forme_flechie_nom(node_nom * new,p_word_stock ws);
 p_node_nom createNode_nom(p_word_stock ws, int cpt);
+node_nom * extract_node_nom(node_nom nodeNom);
+node_nom * extract_char_nom(node_nom);
+p_forme_fleche_nom extract_ff_nom(tree_nom);
 
 
 #endif //DICO_OFF_WORD_H

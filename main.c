@@ -17,5 +17,7 @@ int main() {
     readline("test.txt",&treeAdv,&treeVerbe,&treeNom,&treeAdj);
     printf("fin\n");
 
+    p_forme_fleche_nom ff_nom = extract_ff_nom(treeNom);
+    printf("%s",ff_nom->base);
 
 }
