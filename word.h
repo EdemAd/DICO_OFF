@@ -27,8 +27,9 @@ void add_nom(p_word_stock ws,tree_nom *tree);
 p_word_stock createws();
 void add_forme_flechie_nom(node_nom * new,p_word_stock ws);
 p_node_nom createNode_nom(p_word_stock ws, int cpt);
-p_node_nom extract_ff_Pnom (tree_nom tree);
-p_node_nom extract_node_nom(p_node_nom nodeNom);
+p_node_nom ixtract_node_nom(p_node_nom nodeNom);
+p_node_nom ixtract_ff_Pnom (tree_nom tree);
+
 
 
 void add_adj(p_word_stock ws,tree_adj *tree);
