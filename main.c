@@ -16,4 +16,6 @@ int main() {
     printf("etape 1\n");
     readline("test.txt",&treeAdv,&treeVerbe,&treeNom,&treeAdj);
     printf("fin\n");
+
+
 }

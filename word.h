@@ -13,9 +13,9 @@
 
 typedef struct word_stock
 {
-    char *mot;
-    char *base;
-    char *explain;
+    char * mot;
+    char * base;
+    char * explain;
 }word_stock,*p_word_stock;
 
 

@@ -27,7 +27,8 @@ void readline (char* filename, tree_adv * treeAdv, tree_verbe * treeVerbe, tree_
 
 
 
-    while(fgets(line,MAX_LINE_SIZE,dico) != NULL) {
+    while(fgets(line,MAX_LINE_SIZE,dico) != NULL)
+    {
 
         p_word_stock ws = createws();
 
@@ -95,7 +96,7 @@ void add_nom(p_word_stock ws,tree_nom *tree)
     p_cell_nom pcell_node = createCell_nom(p_node);
     printf("%c\n",p_node->val);
 
-    if (tree->root.liste_fils==NULL)
+    if (tree->root.liste_fils->head == NULL)
     {
         printf("etape 6.5\n");
         tree->root.liste_fils->head = pcell_node;
@@ -109,24 +110,28 @@ void add_nom(p_word_stock ws,tree_nom *tree)
         printf("etape 6.8\n");
         while(fin == 0)
         {
+            printf("etape 6.83\n");
             if (tmp->node->val == p_node->val)
             {
+                printf("etape 6.835\n");
                 fin = 1;
+
             }
-            else {
+            else
+            {
                 if (tmp->next == NULL)
                 {
-                    tmp->next = malloc(sizeof(cell_nom));
+                    printf("etape 6.84\n");
                     tmp->next = pcell_node;
-                    fin=1;
+                    fin = 1;
+                    printf("etape 6.85\n");
                     tree->root.liste_fils->tail = tmp->next;
-                    tmp = tmp->next;
-
+                    printf("etape 6.87\n");
 
                 }
-
-
+                tmp = tmp->next;
             }
+
 
         }
     }
@@ -187,9 +192,13 @@ void add_forme_flechie_nom(node_nom * node, p_word_stock ws)
 
     printf("ff_1\n");
     int cpt = 0;
-    forme_fleche_nom ff_nom;
-    strcpy(ff_nom.forme_flechie,ws->mot);
-    ff_nom.nb_ff++;
+    forme_fleche_nom * ff_nom = create_ff_nom();
+    printf("ff_1.5\n");
+    strcpy(ff_nom->forme_flechie,ws->mot);
+    printf("ff_2\n");
+    printf("%s\n",ws->mot);
+    ff_nom->nb_ff++;
+
 
     while (ws->explain[cpt]!=':') {
         cpt++;
@@ -199,14 +208,14 @@ void add_forme_flechie_nom(node_nom * node, p_word_stock ws)
     switch (ws->explain[cpt])
     {
         case 'M':
-            ff_nom.genre = 1;
+            ff_nom->genre = 1;
             printf("ff_5\n");
             break;
         case 'F':
-            ff_nom.genre = 2;
+            ff_nom->genre = 2;
             break;
         case 'I':
-            ff_nom.genre = 3;
+            ff_nom->genre = 3;
             break;
     }
     while (ws->explain[cpt]!='+'){
@@ -217,16 +226,16 @@ void add_forme_flechie_nom(node_nom * node, p_word_stock ws)
     {
         case 'S':
             printf("ff_6\n");
-            ff_nom.nombre=4;
+            ff_nom->nombre=4;
             break;
         case 'P' :
-            ff_nom.nombre=5;
+            ff_nom->nombre=5;
             break;
         case 'I':
-            ff_nom.nombre=6;
+            ff_nom->nombre=6;
             break;
     }
-    p_cell_ff_nom cell_ff = createCell_ff_nom(&ff_nom);
+    p_cell_ff_nom cell_ff = createCell_ff_nom(ff_nom);
     printf("ff_7\n");
     if(node->liste_ffleche->head == NULL)
     {
