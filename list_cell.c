@@ -191,4 +191,3 @@ t_ht_adv_list * createList_adv()
 
     return L;
 }
-

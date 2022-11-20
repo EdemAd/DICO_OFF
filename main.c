@@ -2,6 +2,7 @@
 #include "word.h"
 #include "list_cell.h"
 
+
 int main() {
     tree_adj treeAdj;
     tree_nom treeNom;

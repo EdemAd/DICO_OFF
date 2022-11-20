@@ -918,8 +918,8 @@ void cree_phrase(tree_nom treenom,tree_adv treeadv,tree_verbe treeverbe,tree_adj
         cell_verbe = tmp_verbe2->liste_ffleche->head;
         while (cell_verbe != NULL || ok != 1) {
             if ((cell_verbe->forme_flechie->nombre==formefVerbe->nombre)&&
-            (cell_verbe->forme_flechie->genre==formefVerbe->genre)&&
-            (strcmp(cell_verbe->forme_flechie->temps,formefVerbe->temps))==0){
+                (cell_verbe->forme_flechie->genre==formefVerbe->genre)&&
+                (strcmp(cell_verbe->forme_flechie->temps,formefVerbe->temps))==0){
                 ok=1;
                 formefverbe2=cell_verbe->forme_flechie;
 

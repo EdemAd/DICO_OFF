@@ -13,6 +13,7 @@
 #include <math.h>
 #include <string.h>
 
+
 ///----------------------------------------NOM------------------------------------------------
 
 typedef struct node_nom
@@ -267,9 +268,6 @@ p_cell_ff_verbe createCell_ff_verbe(forme_fleche_verbe *);
 
 p_cell_adv createCell_adv();
 t_ht_adv_list * createList_adv();
-
-
-
 
 
 
