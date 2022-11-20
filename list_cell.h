@@ -66,6 +66,7 @@ typedef struct forme_fleche_nom
 {
     int nombre;
     int genre;
+    char * base;
     char * forme_flechie;
 
 }forme_fleche_nom,* p_forme_fleche_nom;
