@@ -20,6 +20,8 @@ typedef struct node_nom
     char val;
     struct s_ht_nom_list * liste_fils;
     struct s_ht_ff_nom_list * liste_ffleche;
+    int nb_ff;
+
 
 }node_nom, * p_node_nom;
 
@@ -65,7 +67,6 @@ typedef struct forme_fleche_nom
     int nombre;
     int genre;
     char * forme_flechie;
-    int nb_ff;
 
 }forme_fleche_nom,* p_forme_fleche_nom;
 
@@ -84,6 +85,7 @@ typedef struct node_adj
     char val;
     struct s_ht_adj_list * liste_fils;
     struct s_ht_ff_adj_list * liste_ffleche;
+    int nb_ff;
 
 }node_adj, * p_node_adj;
 
@@ -129,7 +131,7 @@ typedef struct forme_fleche_adj
     int nombre;
     int genre;
     char * forme_flechie;
-    int nb_ff;
+
 
 }forme_fleche_adj,* p_forme_fleche_adj;
 
@@ -147,6 +149,7 @@ typedef struct node_verbe
     char val;
     struct s_ht_verbe_list * liste_fils;
     struct s_ht_ff_verbe_list * liste_ffleche;
+    int nb_ff;
 
 }node_verbe, * p_node_verbe;
 
@@ -193,13 +196,13 @@ typedef struct forme_fleche_verbe
     int nombre;
     int genre;
     char * forme_flechie;
-    int nb_ff;
+
 
 }forme_fleche_verbe,* p_forme_fleche_verbe;
 
 typedef struct tree_verbe
 {
-    node_nom root;
+    node_verbe root;
 
 }tree_verbe;
 
@@ -247,22 +250,21 @@ p_cell_ff_nom createCell_ff_nom(forme_fleche_nom *);
 
 
 p_cell_adj createCell_adj(p_node_adj);
-t_ht_adj_list createList_adj();
-p_node_adj createNode_adj(char);
-t_ht_ff_adj_list create_ff_list_adj();
-p_cell_ff_adj createCell_ff_adj(p_forme_fleche_adj);
+t_ht_adj_list * createList_adj();
+forme_fleche_adj * create_ff_adj();
+t_ht_ff_adj_list * create_ff_list_adj();
+p_cell_ff_adj createCell_ff_adj(forme_fleche_adj *);
 
 
 p_cell_verbe createCell_verbe(p_node_verbe);
-t_ht_verbe_list createList_verbe();
-p_node_verbe createNode_verbe(char);
-t_ht_ff_verbe_list create_ff_list_verbe();
-p_cell_ff_verbe createCell_ff_verbe(p_forme_fleche_verbe);
+t_ht_verbe_list * createList_verbe();
+forme_fleche_verbe * create_ff_verbe();
+t_ht_ff_verbe_list * create_ff_list_verbe();
+p_cell_ff_verbe createCell_ff_verbe(forme_fleche_verbe *);
 
+p_cell_adv createCell_adv();
+t_ht_adv_list * createList_adv();
 
-p_cell_adv createCell_adv(p_node_adv);
-t_ht_adv_list createList_adv();
-p_node_adv createNode_adv(char);
 
 
 

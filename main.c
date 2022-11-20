@@ -8,14 +8,15 @@ int main() {
     tree_verbe treeVerbe;
     tree_adv treeAdv;
 
-    treeAdv.root.liste_fils = NULL;
-    treeVerbe.root.liste_fils=NULL;
+    treeAdv.root.liste_fils = createList_adv();
+    treeVerbe.root.liste_fils=createList_verbe();
     treeNom.root.liste_fils = createList_nom() ;
-    treeAdj.root.liste_fils=NULL;
+    treeAdj.root.liste_fils= createList_adj();
 
     printf("etape 1\n");
     readline("test.txt",&treeAdv,&treeVerbe,&treeNom,&treeAdj);
     printf("fin\n");
+
 
 
 }

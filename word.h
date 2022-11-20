@@ -28,4 +28,16 @@ void add_forme_flechie_nom(node_nom * new,p_word_stock ws);
 p_node_nom createNode_nom(p_word_stock ws, int cpt);
 
 
+void add_adj(p_word_stock ws,tree_adj *tree);
+void add_forme_flechie_adj(node_adj * new,p_word_stock ws);
+p_node_adj createNode_adj(p_word_stock ws, int cpt);
+
+void add_verbe(p_word_stock ws,tree_verbe *tree);
+void add_forme_flechie_verbe(node_verbe * new,p_word_stock ,int test);
+p_node_verbe createNode_verbe(p_word_stock ws, int cpt);
+
+void add_adv(p_word_stock ws,tree_adv *tree);
+p_node_adv createNode_adv(p_word_stock ws, int cpt);
+
+
 #endif //DICO_OFF_WORD_H
