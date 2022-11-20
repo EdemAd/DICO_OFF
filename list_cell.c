@@ -17,40 +17,29 @@ p_cell_nom createCell_nom(p_node_nom node)
 }
 
 
-t_ht_nom_list createList_nom()
+t_ht_nom_list * createList_nom()
 {
-    t_ht_nom_list L;
-    L.head = NULL;
-    L.tail = NULL;
+    t_ht_nom_list * L = malloc(sizeof(t_ht_nom_list));
+    L->head = NULL;
+    L->tail = NULL;
 
     return L;
 }
 
-p_node_nom createNode_nom(char lettre)
+t_ht_ff_nom_list * create_ff_list_nom()
 {
-    p_node_nom node = malloc(sizeof(node_nom));
-    node->val = lettre;
-    node->liste_fils = NULL;
-    node->liste_ffleche = NULL;
-
-    return node;
-
-}
-
-t_ht_ff_nom_list create_ff_list_nom()
-{
-    t_ht_ff_nom_list L;
-    L.head = NULL;
-    L.tail = NULL;
+    t_ht_ff_nom_list * L = malloc(sizeof(t_ht_ff_nom_list));
+    L->head = NULL;
+    L->tail = NULL;
 
     return L;
 }
 
 
-p_cell_ff_nom createCell_ff_nom(forme_fleche_nom ff_nom)
+p_cell_ff_nom createCell_ff_nom(forme_fleche_nom * ff_nom)
 {
     p_cell_ff_nom ff = malloc(sizeof(cell_fleche_nom));
-    ff->forme_flechie = &ff_nom;
+    ff->forme_flechie = ff_nom;
     ff->next = NULL;
 
     return ff;

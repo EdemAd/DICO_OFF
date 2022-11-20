@@ -23,6 +23,9 @@ void readline (char *, tree_adv *, tree_verbe *, tree_nom *, tree_adj *);
 
 
 void add_nom(p_word_stock ws,tree_nom *tree);
+p_word_stock createws();
+void add_forme_flechie_nom(node_nom * new,p_word_stock ws);
+p_node_nom createNode_nom(p_word_stock ws, int cpt);
 
 
 #endif //DICO_OFF_WORD_H

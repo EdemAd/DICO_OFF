@@ -240,10 +240,10 @@ typedef struct tree_adv
 
 
 p_cell_nom createCell_nom(p_node_nom);
-t_ht_nom_list createList_nom();
-p_node_nom createNode_nom(char);
-t_ht_ff_nom_list create_ff_list_nom();
-p_cell_ff_nom createCell_ff_nom(forme_fleche_nom);
+t_ht_nom_list * createList_nom();
+
+t_ht_ff_nom_list * create_ff_list_nom();
+p_cell_ff_nom createCell_ff_nom(forme_fleche_nom *);
 
 
 p_cell_adj createCell_adj(p_node_adj);
