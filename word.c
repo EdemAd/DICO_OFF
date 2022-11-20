@@ -848,7 +848,7 @@ p_node_adv createNode_adv(p_word_stock ws, int cpt)
 
 
 
-
+/***
 
 ///------------------------------------phrases------------------------------------------------------------------------
 void cree_phrase(tree_nom treenom,tree_adv treeadv,tree_verbe treeverbe,tree_adj treeadj){
@@ -947,4 +947,72 @@ void cree_phrase(tree_nom treenom,tree_adv treeadv,tree_verbe treeverbe,tree_adj
     }
 
 
+}***/
+
+p_node_nom extract_node_nom(p_node_nom nodeNom)
+{
+    p_cell_nom tmp = nodeNom->liste_fils->head;
+
+    if(tmp != NULL)
+    {
+        srand(time(NULL));
+
+
+        int choix = rand()%26;
+        printf("1\n");
+
+        for(int i=0; i < choix; i++)
+        {
+            tmp = tmp->next;
+            printf("1.2\n");
+            if(tmp == NULL)
+            {
+                tmp = nodeNom->liste_fils->head;
+                printf("1.3\n");
+            }
+        }
+        printf("1.4\n");
+        return tmp->node;
+    }
+    else
+    {
+        printf("1.5");
+        printf("%",tmp->node);
+        return nodeNom;
+    }
+
+}
+
+p_node_nom extract_ff_Pnom (tree_nom tree)
+{
+    p_node_nom tmp_node = extract_node_nom(&tree.root);
+    printf("2\n");
+    char* word = malloc(MAX_LINE_SIZE*sizeof(char));
+    printf("2.1\n");
+
+    int fin = 0;
+    do
+    {
+        if(tmp_node->liste_ffleche->head != NULL)
+        {
+            int pile_face = rand()%101;
+            if(pile_face % 2 == 0)
+            {
+                printf("2.3\n");
+                fin = 1;
+                //strcat(word,tmp_node->liste_ffleche->head->forme_flechie->base);
+                printf("2.35\n");
+            }
+        }
+        else
+        {
+            printf("2.4\n");
+            tmp_node = extract_node_nom(tmp_node);//---//
+        }
+
+    }while ((tmp_node->liste_fils->head != NULL)||(fin == 0));
+
+    printf("2.6\n");
+
+    return tmp_node;
 }

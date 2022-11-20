@@ -21,5 +21,8 @@ int main() {
     /*p_forme_fleche_nom ff_nom = extract_ff_nom(treeNom);
     printf("%s",ff_nom->base);*/
 
+    p_node_nom pn = extract_ff_Pnom(treeNom);
+    printf("%s",pn->liste_ffleche->head->forme_flechie->base);
+
 
 }
